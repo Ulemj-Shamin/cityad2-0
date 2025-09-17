@@ -5,25 +5,28 @@ import { supabase } from '../supabaseClient'; // make sure this exists
 export default function Login() {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
   const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOtp({ 
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
-      options: {
-        emailRedirectTo: 'https://cityad2-0.vercel.app/' // your deployed URL
-      } 
+      password,
     });
+
     if (error) {
       setMessage(`Error: ${error.message}`);
     } else {
-      setMessage(`Magic link sent to ${email}. Check your inbox!`);
+      setMessage(t('login.successMessage')); // Example: "Login successful!"
+      // Redirect to dashboard after login
+      window.location.href = '/dashboard';
     }
   };
 
   return (
     <div className="p-4 text-center">
       <h1 className="text-lightning text-3xl mb-4">{t('login.title')}</h1>
+
       <input
         type="email"
         placeholder={t('login.emailPlaceholder')}
@@ -31,12 +34,22 @@ export default function Login() {
         onChange={(e) => setEmail(e.target.value)}
         className="p-2 rounded border border-cyan text-black w-64 mb-2"
       /><br/>
+
+      <input
+        type="password"
+        placeholder={t('login.passwordPlaceholder')}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="p-2 rounded border border-cyan text-black w-64 mb-2"
+      /><br/>
+
       <button
         className="bg-cyan text-black px-4 py-2 rounded"
         onClick={handleLogin}
       >
-        {t('login.sendLink')}
+        {t('login.signIn')}
       </button>
+
       {message && <p className="mt-2 text-sm">{message}</p>}
     </div>
   );
