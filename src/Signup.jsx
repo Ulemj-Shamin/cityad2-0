@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { supabase } from '../supabaseClient'; // make sure this exists
+import { supabase } from './supabaseClient'; // make sure this exists
 
 export default function Signup() {
   const { t } = useTranslation();
