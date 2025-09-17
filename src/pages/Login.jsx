@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { supabase } from '../supabaseClient'; // make sure this exists
+import { supabase } from '../supabaseClient';
 
 export default function Login() {
   const { t } = useTranslation();
@@ -17,8 +17,7 @@ export default function Login() {
     if (error) {
       setMessage(`Error: ${error.message}`);
     } else {
-      setMessage(t('login.successMessage')); // Example: "Login successful!"
-      // Redirect to dashboard after login
+      setMessage(t('login.successMessage'));
       window.location.href = '/dashboard';
     }
   };

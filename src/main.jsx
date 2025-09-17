@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import './i18n'; // Import i18n for translations
-import Login from './Login';
-import Signup from './Signup';
-import Dashboard from './Dashboard';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
 import AuthRedirectHandler from './AuthRedirectHandler';
 
 const url = window.location.pathname;
