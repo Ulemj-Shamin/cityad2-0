@@ -8,11 +8,16 @@ export default function Login() {
   const [message, setMessage] = useState('');
 
   const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOtp({ email });
+    const { error } = await supabase.auth.signInWithOtp({ 
+      email,
+      options: {
+        emailRedirectTo: 'https://cityad2-0.vercel.app/' // your deployed URL
+      } 
+    });
     if (error) {
       setMessage(`Error: ${error.message}`);
     } else {
-      setMessage(t('login.emailSent'));
+      setMessage(`Magic link sent to ${email}. Check your inbox!`);
     }
   };
 
