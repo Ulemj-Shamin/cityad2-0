@@ -17,6 +17,8 @@ else Page = Login;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <App>
+      <Page />
+    </App>
   </React.StrictMode>
 );

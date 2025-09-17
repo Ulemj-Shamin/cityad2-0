@@ -41,3 +41,4 @@ AppData/
 # Optional: Supabase local
 supabase/migrations/
 supabase/.temp/
+.vercel
