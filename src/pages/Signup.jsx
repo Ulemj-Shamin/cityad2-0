@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { supabase } from '../supabaseClient'; // make sure this exists
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 
 export default function Signup() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -17,7 +19,8 @@ export default function Signup() {
     if (error) {
       setMessage(`Error: ${error.message}`);
     } else {
-      setMessage(t('signup.successMessage')); // Example: "Account created! You can log in."
+      setMessage(t('signup.successMessage'));
+      navigate('/login'); // redirect to login after successful signup
     }
   };
 
@@ -30,7 +33,7 @@ export default function Signup() {
         placeholder={t('signup.emailPlaceholder')}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="p-2 rounded border border-cyan text-black w-64 mb-2"
+        className="p-2 rounded border border-green-500 text-black w-64 mb-2"
       /><br/>
 
       <input
@@ -38,7 +41,7 @@ export default function Signup() {
         placeholder={t('signup.passwordPlaceholder')}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="p-2 rounded border border-cyan text-black w-64 mb-2"
+        className="p-2 rounded border border-green-500 text-black w-64 mb-2"
       /><br/>
 
       <button

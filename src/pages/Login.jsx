@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 
 export default function Login() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -18,7 +20,7 @@ export default function Login() {
       setMessage(`Error: ${error.message}`);
     } else {
       setMessage(t('login.successMessage'));
-      window.location.href = '/dashboard';
+      navigate('/dashboard'); // <-- use React Router instead of window.location
     }
   };
 

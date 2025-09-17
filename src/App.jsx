@@ -8,6 +8,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 
 export default function App() {
@@ -19,7 +21,7 @@ export default function App() {
       setUser(data.session?.user ?? null);
     });
 
-    // Listen for auth state changes (e.g., magic link login)
+    // Listen for auth state changes (e.g., login/logout)
     const { subscription } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
     });
@@ -36,6 +38,8 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<Admin user={user} />} />
       </Routes>
     </Router>
