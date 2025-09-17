@@ -10,10 +10,19 @@ const resources = {
       contact: { title: "Contact Us" },
       faq: { title: "FAQ" },
       login: {
-      title: "Login / Sign Up",
-      emailPlaceholder: "Enter your email",
-      sendLink: "Send Magic Link",
-      emailSent: "Check your email for the login link"},
+        title: "Login",
+        emailPlaceholder: "Enter your email",
+        passwordPlaceholder: "Enter your password",
+        signIn: "Login",
+        successMessage: "Login successful!"
+      },
+      signup: {
+        title: "Sign Up",
+        emailPlaceholder: "Enter your email",
+        passwordPlaceholder: "Enter your password",
+        signUp: "Sign Up",
+        successMessage: "Account created! You can now log in."
+      },
       admin: { title: "Admin Upload" }
     }
   },
@@ -25,10 +34,19 @@ const resources = {
       contact: { title: "Холбоо барих" },
       faq: { title: "Түгээмэл асуулт" },
       login: {
-      title: "Нэвтрэх / Бүртгүүлэх",
-      emailPlaceholder: "Имэйлээ оруулна уу",
-      sendLink: "Нэвтрэх холбоос илгээх",
-      emailSent: "Нэвтрэх холбоосыг имэйлээсээ шалгана уу" },
+        title: "Нэвтрэх",
+        emailPlaceholder: "Имэйлээ оруулна уу",
+        passwordPlaceholder: "Нууц үгээ оруулна уу",
+        signIn: "Нэвтрэх",
+        successMessage: "Амжилттай нэвтэрлээ!"
+      },
+      signup: {
+        title: "Бүртгүүлэх",
+        emailPlaceholder: "Имэйлээ оруулна уу",
+        passwordPlaceholder: "Нууц үгээ оруулна уу",
+        signUp: "Бүртгүүлэх",
+        successMessage: "Бүртгэл амжилттай үүслээ! Одоо нэвтэрч болно."
+      },
       admin: { title: "Админ оруулах" }
     }
   }
