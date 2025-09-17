@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-cyan: #00FFFF;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.text-lightning {
+  color: var(--color-text);
+  text-shadow: 0 0 5px var(--color-cyan), 0 0 10px var(--color-cyan),
+               0 0 20px var(--color-cyan), 0 0 40px var(--color-cyan);
+  animation: lightning 2s infinite;
+}
+
+@keyframes lightning {
+  0%,100% { text-shadow: 0 0 5px var(--color-cyan),0 0 10px var(--color-cyan),0 0 20px var(--color-cyan),0 0 40px var(--color-cyan);}
+  10% { text-shadow: 0 0 20px var(--color-cyan),0 0 40px var(--color-cyan),0 0 60px var(--color-cyan),0 0 80px var(--color-cyan);}
+  30% { text-shadow: 0 0 30px var(--color-cyan),0 0 60px var(--color-cyan),0 0 90px var(--color-cyan),0 0 120px var(--color-cyan);}
+}
