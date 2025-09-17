@@ -9,7 +9,11 @@ const resources = {
       about: { title: "About Us", description: "We help LED board owners showcase their products and buyers to purchase easily." },
       contact: { title: "Contact Us" },
       faq: { title: "FAQ" },
-      login: { title: "Login / Sign Up" },
+      login: {
+      title: "Login / Sign Up",
+      emailPlaceholder: "Enter your email",
+      sendLink: "Send Magic Link",
+      emailSent: "Check your email for the login link"},
       admin: { title: "Admin Upload" }
     }
   },
@@ -20,7 +24,11 @@ const resources = {
       about: { title: "Бидний тухай", description: "Бид LED самбарын эзэнд бүтээгдэхүүнээ харуулах, худалдан авагчдад худалдан авахад тусалдаг." },
       contact: { title: "Холбоо барих" },
       faq: { title: "Түгээмэл асуулт" },
-      login: { title: "Нэвтрэх / Бүртгүүлэх" },
+      login: {
+      title: "Нэвтрэх / Бүртгүүлэх",
+      emailPlaceholder: "Имэйлээ оруулна уу",
+      sendLink: "Нэвтрэх холбоос илгээх",
+      emailSent: "Нэвтрэх холбоосыг имэйлээсээ шалгана уу" },
       admin: { title: "Админ оруулах" }
     }
   }

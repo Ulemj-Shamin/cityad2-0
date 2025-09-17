@@ -1,5 +1,43 @@
-node_modules
-dist
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Environment variables
 .env
-AppData/
+.env.local
+.env.*.local
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+AppData/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Public/local storage (browser)
+*.localstorage
+*.sqlite
+
+# Optional: Supabase local
+supabase/migrations/
+supabase/.temp/
